@@ -18,6 +18,7 @@ const getPokemon = (namePokemon) =>{
             type.push(item.type.name);
         })
 
+        
         cardPokemon.innerHTML='';
         cardPokemon.innerHTML+=`
             <section class="pokemon">
