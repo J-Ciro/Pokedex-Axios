@@ -83,13 +83,11 @@ th {
 }
 
 .poke-image {
-  width: 520px;
+  width: 90%;
   height: auto;
-  left: 13px;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50px;
   image-rendering: pixelated;
-  margin-top: 50px;
+  margin-top: 10px;
   position: relative;
   /* background-color: #3d348b35;
   border-radius: 15px;
