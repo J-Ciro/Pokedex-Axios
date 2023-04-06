@@ -1,26 +1,27 @@
-
-axios.get('https://pokeapi.co/api/v2/pokemon').then(resp=> {
+//  1. Consumir API
+axios.get('https://pokeapi.co/api/v2/pokemon').then(resp => {
     console.log(resp.data);
 });
 
-
-const getPokemon = (namePokemon) =>{
-    fetch(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`)
-    .then(response => response.json())
-    .then(data => {
-        const cardPokemon= document.getElementById('dataPokemon');
+// 2. Pintar pokemons del footer
+const getPokemon = async (namePokemon) => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`)
+    .then(response => {
+        const data = response.data;
+        const cardPokemon = document.getElementById('dataPokemon');
         const abilities = [];
-        data.abilities.forEach((item)=>{
+        
+        data.abilities.forEach((item) => {
             abilities.push(item.ability.name);
         })
+
         const type = [];
-        data.types.forEach((item)=>{
+        data.types.forEach((item) => {
             type.push(item.type.name);
         })
 
-        
-        cardPokemon.innerHTML='';
-        cardPokemon.innerHTML+=`
+        cardPokemon.innerHTML = '';
+        cardPokemon.innerHTML += `
             <section class="pokemon">
                 <section class="nombre">
                     <h1>${data.name}</h1>
@@ -59,8 +60,11 @@ const getPokemon = (namePokemon) =>{
         `
     })
 }
-document.getElementById("snorlax").addEventListener('click', ()=>getPokemon('snorlax'))
-document.getElementById("charizard").addEventListener('click', ()=>getPokemon('charizard'))
-document.getElementById("venusaur").addEventListener('click', ()=>getPokemon('venusaur'))
-document.getElementById("gastly").addEventListener('click', ()=>getPokemon('gastly'))
+
+document.getElementById("snorlax").addEventListener('click', () => getPokemon('snorlax'))
+document.getElementById("charizard").addEventListener('click', () => getPokemon('charizard'))
+document.getElementById("venusaur").addEventListener('click', () => getPokemon('venusaur'))
+document.getElementById("gastly").addEventListener('click', () => getPokemon('gastly'))
 getPokemon('pikachu');
+
+//3. Hacer que las imagenes del footer sean aleatorias
