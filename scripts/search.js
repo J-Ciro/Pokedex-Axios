@@ -87,3 +87,5 @@ const displayPokemons = (allInfo, container) => {
 });
 
 
+
+
