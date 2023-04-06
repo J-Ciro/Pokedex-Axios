@@ -41,13 +41,20 @@ const getAllInfoPokemons = async (url) => {
     return []
   }
 }
+const  clickPokemon=(namePokemon)=>{
+  getPokemon(namePokemon);
+  
+  const currentModal=document.getElementById('exampleModal');
+  const myModal =  bootstrap.Modal.getInstance(currentModal)
+  myModal.hide()
+}
 // Funcion la cual nos permite limpiar el container y mostrar los pokemons 
 const displayPokemons = (allInfo, container) => {
   container.innerHTML = '';
   allInfo.forEach(pokemon => {
     console.log(pokemon)
     container.innerHTML += `
-      <ul>
+      <ul onclick={clickPokemon('${pokemon.name}')}>
         <li>
           <img src='${pokemon.image}' class="test">
           <span>${pokemon.name}</span>
