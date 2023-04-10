@@ -3,6 +3,134 @@ axios.get('https://pokeapi.co/api/v2/pokemon').then(resp => {
     console.log(resp.data);
 });
 
+// Array para el ico del tipo de pokemon
+let found;
+const typeArray = [
+    {
+        id:0,
+        name: "bug",
+        img: "/imgs/bug.png"
+    },
+
+    {
+        id: 1,
+        name: "dark",
+        img: "/imgs/dark.png"
+    },
+    
+    {
+        id: 2,
+        name: "dragon",
+        img: "./imgs/dragon.png"
+    },
+
+    {
+        id: 3,
+        name: "electric",
+        img: "./imgs/electric.png"
+    },
+
+    {
+        id: 4,
+        name: "fairy",
+        img: "./imgs/fairy.png"
+    },
+
+
+    {
+        id: 5,
+        name: "fighting",
+        img: "./imgs/fighting.png"
+    },
+
+    
+    {
+        id: 6,
+        name: "fire",
+        img: "./imgs/fire.png"
+    },
+
+    
+    {
+        id: 7,
+        name: "fly",
+        img: "./imgs/fly.png"
+    },
+
+    
+    {
+        id: 8,
+        name: "ghost",
+        img: "./imgs/ghost.png"
+    },
+
+    
+    {
+        id: 9,
+        name: "grass",
+        img: "./imgs/grass.png"
+    },
+    
+    {
+        id: 10,
+        name: "ground",
+        img: "./imgs/ground.png"
+    },
+    
+    {
+        id: 11,
+        name: "ice",
+        img: "./imgs/ice.png"
+    },
+
+    
+    {
+        id: 12,
+        name: "normal",
+        img: "./imgs/normal.png"
+    },
+
+    
+    {
+        id: 13,
+        name: "poison",
+        img: "./imgs/posion.png"
+    },
+
+    
+    {
+        id: 14,
+        name: "psychic",
+        img: "./imgs/psychic.png"
+    },
+
+    
+    {
+        id: 15,
+        name: "rock",
+        img: "./imgs/rock.png"
+    },
+
+    
+    {
+        id: 16,
+        name: "steel",
+        img: "./imgs/steel.png"
+    },
+
+    
+    {
+        id: 17,
+        name: "water",
+        img: "./imgs/water.png"
+    },
+
+
+
+
+]
+
+
 // 2. Reemplazar pokemons del footer y su info
 const getPokemon = async (namePokemon) => {
     try {
@@ -18,15 +146,21 @@ const getPokemon = async (namePokemon) => {
 
         const type = [];
         data.types.forEach((item) => {
-            type.push(item.type.name);
-        })
+                type.push(item.type.name);
+            })
+            const typeLimited = type.slice(0, 1);
+            found = typeArray.find(element => element.name == typeLimited);
+            console.log(type)
+            console.log(found)
+
+    
 
         cardPokemon.innerHTML = '';
         cardPokemon.innerHTML += `
             <section class="pokemon">
                 <section class="nombre">
                     <h1>${data.name}</h1>
-                    <img src="${data.sprites.front_default}" alt="" />
+                    <img src="${found.img}" alt="" />
                 </section>
                 <img src="${data.sprites.front_default}" alt="${data.name}" class="poke-image" />
             </section>
