@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
     <title>PokeDex</title>
   </head>
   <body>
@@ -13,54 +20,52 @@
       <nav class="nav-bar">
         <img src="/imgs/pokeball.png" alt="Pokeball" class="logo" />
         <a>POKEDEX_</a>
+        <div class="nav__search">
+          <form  id="enviar" >
+            <input type="text" class="search__input" id="searchInput">
+            <button class="button__send" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="material-symbols-outlined">
+              search
+              </span></button>
+          </form>
+        </div>
       </nav>
     </header>
     <!-- Main -->
-    <main>
+
+      <main>
       <section class="pokemon">
-        <section class="nombre">
+          <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"><img src="/imgs/black-poke.svg" alt="Pokeball" class="logo" />PokeDex</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                  <nav class="poke-list-search" id="pokeShow" >
+                   
+                  </nav>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        
+        <!-- <section class="nombre" >
           <h1>GASLY</h1>
           <img src="/imgs/posion.png" alt="" />
-        </section>
-
-        <img src="/imgs/gasly.png" alt="Gasly" class="poke-image" />
-      </section>
-      <aside class="poke-table">
-        <table class="statistics">
-          <tr>
-            <th>NO.</th>
-            <th>LEVEL</th>
-          </tr>
-          <tr>
-            <td>0092</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <th>TYPE</th>
-            <th>HABILITY</th>
-          </tr>
-          <tr>
-            <td>GHOST/POISON</td>
-            <td>LEVITATE</td>
-          </tr>
-          <tr>
-            <th>HEIGHT</th>
-            <th>WEIGHT</th>
-          </tr>
-          <tr>
-            <td>1,3m</td>
-            <td>0.1kg</td>
-          </tr>
-        </table>
-      </aside>
+        </section> -->
+      </main>
     </main>
+    <section id="dataPokemon">
+    </section>
     <!-- Footer -->
     <footer class="pokemons">
       <a href="" class="others">OTHERS</a>
       <nav class="poke-list">
         <ul>
           <li>
-            <a href="#">
+            <a href="#" id="snorlax">
               <img
                 src="https://img.pokemondb.net/sprites/sword-shield/normal/snorlax.png"
                 alt="Snorlax"
@@ -68,7 +73,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" id="charizard">
               <img
                 src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/charizard.png"
                 alt="Charizard"
@@ -76,7 +81,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" id="venusaur">
               <img
                 src="https://img.pokemondb.net/sprites/lets-go-pikachu-eevee/normal/venusaur.png"
                 alt="Venusaur"
@@ -84,7 +89,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" id="gastly">
               <img
                 src="https://img.pokemondb.net/sprites/black-white/normal/gastly.png"
                 alt="Gastly"
@@ -95,5 +100,8 @@
       </nav>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/script.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="scripts/search.js"></script>
   </body>
 </html>
