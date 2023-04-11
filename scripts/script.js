@@ -1,10 +1,6 @@
 // 1. Consumir API
-axios.get('https://pokeapi.co/api/v2/pokemon').then(resp => {
-    console.log(resp.data);
-});
-
-// Array para el ico del tipo de pokemon
 let found;
+// Array para el ico del tipo de pokemon
 const typeArray = [
     {
         id:0,
