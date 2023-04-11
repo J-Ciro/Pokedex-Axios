@@ -277,7 +277,7 @@ th {
 
 
 /* Media Query */
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 627px) {
   .logo {
     height: 30px;
     padding: 5px;
