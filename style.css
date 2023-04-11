@@ -277,17 +277,7 @@ th {
 
 
 /* Media Query */
-@media screen and (max-width: 627px) {
-
-  .nav__search input{
-    width: 200px;
-    height: 28px;
-    background-color: rgba(255, 255, 255, 0.042);
-    color: white;
-    font-family: "Josefin Sans", sans-serif;
-}
-  }
-
+@media screen and (max-width: 599px) {
   .logo {
     height: 30px;
     padding: 5px;
